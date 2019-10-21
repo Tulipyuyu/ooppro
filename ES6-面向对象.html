@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象</title>
+</head>
+<body>
+    
+    <script>
+        
+        // function Animal(name,age){
+        //     this.name = name
+        //     this.age = age
+        // }
+
+        // var cat = new Animal('加菲猫',3)
+        // console.log(cat)
+
+        // ES6 面向对象
+        class Person {
+            constructor(name,age,sex){
+                this.name = name
+                this.age = age
+                this.sex = sex
+            }
+
+            // 实例方法
+            sayhello(){
+                return "I'm " + this.name +' ----- '+ this.age
+            }
+        }
+
+        // 子类 中国人
+        class Chinese extends Person{
+            constructor(name,age,sex,IDnumber){
+                // super 必须在函数第一行被调用
+                super(name,age,sex)
+                // 在子类中 this 只能放在super之后使用
+                this.IDnumber = IDnumber
+            }
+        }
+        var personA = new Chinese('小明',12,'boy','420321')
+        console.group('中国人  ----------- ')
+        console.log(personA,'-----')
+        console.log(personA.sayhello())
+        console.groupEnd()
+        // 子类 美国人
+        class Aferica extends Person{
+
+        }
+        var personB = new Aferica('小黑',13,'gorl')
+        console.group('非洲人 ----------')
+        console.log(personB)
+        console.log(personB.sayhello())
+        console.groupEnd()
+    
+    </script>
+</body>
+</html>
