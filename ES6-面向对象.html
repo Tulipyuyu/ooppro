@@ -55,6 +55,21 @@
         console.log(personB)
         console.log(personB.sayhello())
         console.groupEnd()
+
+        //  构造函数面向对象
+        function Car(brand,placrOrigin,price){
+            this.brand = brand;
+            this.placrOrigin = placrOrigin;
+            this.price = price;
+            this.run = function(){
+                '这是 '+this.brand + ' 品牌的汽车，产自 '+ this.placrOrigin+',跑得很快'
+            }
+        }
+
+        let bmw = new Car('BMW','German','20万')
+        console.log(bmw)
+        console.dir(bmw)
+        console.dir(Car)
     
     </script>
 </body>
